@@ -1,0 +1,182 @@
+/* index.css — pastel theme version */
+
+/* Global palette */
+:root {
+  --bg: #f2f2f200;
+  --bg-soft: #e6e6e600;
+  --surface: #f10c0cfb;
+  --accent: #e700a2;
+}
+
+/* Reset + global layout */
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  min-height: 100%;
+  font-family: Inter, system-ui, sans-serif;
+  background: var(--bg); /* main page background */
+  color: #3b2e66; /* readable deep lavender */
+}
+
+/* Root container */
+#root {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+
+  margin: 0;
+  padding: 0;
+  text-align: initial;
+  overflow: visible;
+}
+
+/* Logo styles updated to pastel glow */
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+
+/* hover glow */
+.logo:hover {
+  filter: drop-shadow(0 0 1.8em var(--accent));
+}
+
+/* React logo hover glow in pastel */
+.logo.react:hover {
+  filter: drop-shadow(0 0 1.8em var(--surface));
+}
+
+/* Logo spin animation */
+@keyframes logo-spin {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+/* Only spin when motion is allowed */
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+/* Card styling using pastel palette */
+.card {
+  padding: 2em;
+  background: linear-gradient(180deg, var(--bg-soft), var(--surface));
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(162,148,249,0.25); /* soft lavender shadow */
+  color: #3b2e66;
+}
+
+/* Docs text */
+.read-the-docs {
+  color: var(--accent); /* lavender-muted text */
+}
+
+/* Heart background (floating hearts) */
+.heart-bg {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none; /* never capture clicks */
+  z-index: 5;           /* adjust to sit behind or above other things as needed */
+}
+
+/* Single heart element */
+.heart {
+  position: absolute;
+  bottom: -10vh;                /* start below the viewport */
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: #ff183b;               /* base color */
+  will-change: transform, opacity;
+  user-select: none;
+  /* two animations applied: floatUp (long) and pop (short) */
+  animation-name: floatUp, pop;
+  animation-timing-function: linear, cubic-bezier(.2,.9,.2,1);
+  animation-iteration-count: infinite, 1;
+  animation-fill-mode: both;
+  text-shadow: 0 8px 18px rgba(255,107,129,0.08);
+  transform-origin: center;
+  pointer-events: none;
+}
+
+/* floatUp: move from bottom to far above and fade out */
+@keyframes floatUp {
+  0% {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+  }
+  30% {
+    opacity: 0.95;
+  }
+  70% {
+    opacity: 0.6;
+  }
+  100% {
+    transform: translateY(-130vh) scale(1.02);
+    opacity: 0;
+  }
+}
+
+/* pop: quick scale/overshoot at the start so hearts "pop" into life */
+@keyframes pop {
+  0% { transform: scale(0.72); opacity: 0.0; }
+  18% { transform: scale(1.28); opacity: 1; }
+  40% { transform: scale(0.98); }
+  100% { transform: scale(1); }
+}
+
+/* Optional: make larger screens show more vivid hearts */
+@media (min-width: 1024px) {
+  .heart { text-shadow: 0 10px 22px rgba(255,107,129,0.12); }
+}
+
+/* Reduce motion preference support */
+@media (prefers-reduced-motion: reduce) {
+  .heart { animation: none; transform: translateY(-10vh); opacity: 0.6; }
+}
+/* Heart Background Container */
+.heart-bg {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 5;
+}
+
+/* Each Heart */
+.heart {
+  position: absolute;
+  bottom: -10vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ff6b81;
+  user-select: none;
+  pointer-events: none;
+  animation-name: floatUp, pop;
+  animation-timing-function: linear, cubic-bezier(.2,.9,.2,1);
+  animation-iteration-count: infinite, 1;
+  animation-fill-mode: both;
+}
+
+/* Floating Animation */
+@keyframes floatUp {
+  0% { transform: translateY(0) scale(1); opacity: 1; }
+  50% { opacity: 0.75; }
+  100% { transform: translateY(-130vh) scale(1.05); opacity: 0; }
+}
+
+/* Pop Animation */
+@keyframes pop {
+  0% { transform: scale(0.6); opacity: 0; }
+  30% { transform: scale(1.25); opacity: 1; }
+  60% { transform: scale(0.95); }
+  100% { transform: scale(1); }
+}

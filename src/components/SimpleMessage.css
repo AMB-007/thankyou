@@ -1,0 +1,222 @@
+:root{
+  --bg: transparent;
+  --card: rgba(255, 20, 147, 0.1);
+  --muted: #ff69b4;
+  --accent: #ff1493;
+  --glass: rgba(255, 105, 180, 0.15);
+  --radius: 30px;
+  --shadow: 0 8px 32px rgba(255, 20, 147, 0.2);
+  --glass-2: rgba(255, 20, 147, 0.2);
+  --max-width: 720px;
+  --gap: 14px;
+}
+
+/* reset */
+* { box-sizing: border-box; }
+html,body {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  background: transparent;
+  font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, Arial;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* PURE CENTER PAGE */
+.sm-wrapper {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;   /* horizontal */
+  align-items: center;        /* vertical */
+  padding: 20px;
+  position: relative;
+  z-index: 10;
+}
+
+/* CENTERED CARD - responsive */
+.sm-card {
+  width: 100%;
+  max-width: 700px;            /* laptop cap */
+  min-width: 280px;            /* prevents collapsing on small screens */
+  height: auto;                /* let content dictate height */
+  background: linear-gradient(135deg, rgba(255, 20, 147, 0.15), rgba(220, 20, 60, 0.1));
+  backdrop-filter: blur(10px);
+  border: 2px solid rgba(255, 105, 180, 0.3);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow), 0 0 40px rgba(255, 20, 147, 0.3);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+
+  padding: 40px 28px;
+  position: relative;
+}
+
+/* content column aligns center */
+.sm-content {
+  z-index: 3;
+  width: 100%;
+  text-align: center;
+}
+
+/* title */
+.sm-title {
+  margin: 0;
+  font-weight: 700;
+  font-size: clamp(18px, 2.6vw, 24px);
+  color: #3b2e66;
+  letter-spacing: -0.01em;
+  text-align: center;
+}
+
+/* extra line */
+.sm-line {
+  margin-top: 8px;
+  font-size: clamp(13px, 1.6vw, 16px);
+  color: var(--muted);
+  opacity: 0.95;
+  text-align: center;
+}
+
+/* subtitle */
+.sm-sub {
+  margin: 14px 0 20px 0;
+  color: #5a4fa3;
+  font-size: clamp(13px, 1.8vw, 15px);
+  line-height: 1.45;
+  text-align: center;
+}
+
+/* actions centered */
+.sm-actions {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  width: 100%;
+  margin-top: 10px;
+}
+
+.sm-btn {
+  border: 0;
+  padding: 10px 16px;
+  border-radius: 10px;
+  font-size: 14px;          /* sensible default */
+  cursor: pointer;
+  transition: transform .14s ease, box-shadow .12s ease;
+  min-width: 86px;
+}
+
+.sm-btn.primary {
+  background: linear-gradient(180deg, #A294F9, #CDC1FF);
+  color: white;
+  box-shadow: 0 6px 16px rgba(162,148,249,0.22);
+}
+
+.sm-btn.ghost {
+  background: transparent;
+  color: var(--muted);
+  border: 1px solid rgba(162,148,249,0.18);
+}
+
+/* heart centered */
+.sm-heart-wrap {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.sm-heart-btn {
+  width: 56px;
+  height: 56px;
+  border-radius: 14px;
+  border: 0;
+  background: linear-gradient(180deg, rgba(255,255,255,0.85), var(--glass));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 6px 20px rgba(101,70,170,0.08), inset 0 -6px 10px rgba(0,0,0,0.03);
+  cursor: pointer;
+  transition: transform .16s cubic-bezier(.2,.9,.2,1), box-shadow .18s;
+}
+
+.sm-heart {
+  font-size: 22px;
+  color: var(--accent);
+}
+
+.sm-heart-btn:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 28px rgba(101,70,170,0.12);
+}
+
+/* overlay left unchanged */
+.sm-overlay {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* -----------------------
+   Responsive breakpoints
+   ----------------------- */
+
+/* Large screens / laptop */
+@media (min-width: 1100px) {
+  .sm-card {
+    max-width: 700px;
+    padding: 48px 40px;
+  }
+
+  .sm-title { font-size: 24px; }
+  .sm-line  { font-size: 16px; }
+  .sm-sub   { font-size: 15px; }
+  .sm-btn   { font-size: 15px; padding: 12px 18px; }
+  .sm-heart-btn { width: 64px; height: 64px; }
+}
+
+/* Tablet */
+@media (min-width: 720px) and (max-width: 1099px) {
+  .sm-card {
+    max-width: 620px;
+    padding: 40px 32px;
+  }
+}
+
+/* Small tablets / large phones */
+@media (max-width: 719px) {
+  .sm-card {
+    max-width: 520px;
+    padding: 32px 22px;
+  }
+  .sm-title { font-size: 20px; }
+}
+
+/* Mobile: narrow phones */
+@media (max-width: 420px) {
+  .sm-wrapper { padding: 12px; }
+  .sm-card {
+    width: 100%;
+    max-width: 100%;
+    border-radius: 28px;
+    padding: 22px;
+  }
+
+  .sm-title { font-size: 18px; }
+  .sm-line  { font-size: 13px; }
+  .sm-sub   { font-size: 13px; margin: 12px 0 16px; }
+  .sm-actions { gap: 10px; }
+  .sm-btn { font-size: 13px; padding: 10px 12px; min-width: 72px; }
+  .sm-heart-btn { width: 52px; height: 52px; border-radius: 12px; }
+}
+
+/* Very small screens */
+@media (max-width: 320px) {
+  .sm-card { padding: 16px; }
+  .sm-title { font-size: 16px; }
+  .sm-line { font-size: 12px; }
+}

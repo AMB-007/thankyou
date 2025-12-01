@@ -1,0 +1,78 @@
+.full-page-hearts {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.falling-heart {
+  position: absolute;
+  bottom: -60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: fall-down linear infinite, sway ease-in-out infinite;
+
+}
+
+@keyframes fall-down {
+  0% {
+    bottom: -60px;
+    opacity: 0;
+    transform: translateX(0) rotate(0deg) scale(0.6);
+  }
+  5% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    bottom: 110vh;
+    opacity: 0;
+    transform: translateX(0) rotate(360deg) scale(1.2);
+  }
+}
+
+@keyframes sway {
+  0% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(var(--sway-amount));
+  }
+  50% {
+    transform: translateX(calc(var(--sway-amount) * -1));
+  }
+  75% {
+    transform: translateX(var(--sway-amount));
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.falling-heart::before {
+  content: '';
+  position: absolute;
+  width: 120%;
+  height: 120%;
+  background: radial-gradient(circle, rgb(194, 38, 121) 0%, transparent 70%);
+  border-radius: 50%;
+  animation: heart-glow 1.8s ease-in-out infinite;
+  z-index: -1;
+}
+
+@keyframes heart-glow {
+  0%, 100% {
+    transform: scale(0.8);
+    opacity: 0;
+    filter: blur(4px);
+  }
+  50% {
+    transform: scale(1.4);
+    opacity: 0.7;
+    filter: blur(8px);
+  }
+}

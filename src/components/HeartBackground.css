@@ -1,0 +1,66 @@
+.heart-bg {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 0;
+}
+
+.heart {
+  position: absolute;
+  bottom: -50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-shadow: 0 0 20px rgba(255, 20, 147, 0.8), 0 0 40px rgba(220, 20, 60, 0.6);
+  filter: drop-shadow(0 0 15px rgba(255, 20, 147, 0.7));
+  animation: float-up 6s ease-in infinite, pulse-glow 700ms ease-in-out infinite;
+}
+
+@keyframes float-up {
+  0% {
+    bottom: -50px;
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    bottom: 110vh;
+    opacity: 0;
+  }
+}
+
+@keyframes pulse-glow {
+  0%, 100% {
+    filter: drop-shadow(0 0 8px rgba(255, 20, 147, 0.5));
+  }
+  50% {
+    filter: drop-shadow(0 0 20px rgba(255, 20, 147, 0.9));
+  }
+}
+
+/* Additional glow effect for hearts */
+.heart::before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255, 20, 147, 0.3) 0%, transparent 70%);
+  animation: glow-pulse 2s ease-in-out infinite;
+}
+
+@keyframes glow-pulse {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 0;
+  }
+  50% {
+    transform: scale(1.5);
+    opacity: 1;
+  }
+}
