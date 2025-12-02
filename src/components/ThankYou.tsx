@@ -80,7 +80,7 @@ function StaticCard({ card }: { card: CardData }) {
 
   const handleClick = (e: React.MouseEvent) => {
     e.preventDefault()
-    setLiked(prev => !prev)
+    setLiked((prev: boolean) => !prev)
     setPulse(true)
     setTimeout(() => setPulse(false), 700)
   }
