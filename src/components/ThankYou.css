@@ -15,7 +15,14 @@ html,body{height:100%;margin:0;padding:0;background:transparent;font-family:Inte
 .hc-wrap{width:100%;max-width:1040px;background:rgba(255, 20, 147, 0.08);backdrop-filter:blur(12px);border:2px solid rgba(255, 105, 180, 0.25);padding:18px;border-radius:18px;box-shadow:0 14px 40px rgba(255, 20, 147, 0.2), 0 0 60px rgba(255, 20, 147, 0.15);text-align:center;}
 
 /* Title */
-.hc-title{font-size:clamp(20px,3.4vw,30px);margin:12px 0 22px;color:#5a4fa3;}
+.hc-title {
+  font-size: clamp(20px, 3.4vw, 30px);
+  margin: 12px 0 22px;
+  color: #5a4fa3;
+  font-family: "Great Vibes", cursive;
+;
+}
+
 
 /* Grid with gentle entrance */
 .hc-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;justify-items:center;align-items:start;opacity:0;transform:translateY(8px);transition:opacity 420ms ease, transform 420ms ease;}
@@ -63,12 +70,12 @@ html,body{height:100%;margin:0;padding:0;background:transparent;font-family:Inte
 
 /* Heart icon */
 .hc-heart{font-size:30px;color:var(--muted);transition:transform 160ms ease,color 160ms ease,filter 160ms ease;line-height:1;}
-.hc-heart.liked{color:var(--accent);transform:scale(1.16);filter:drop-shadow(0 8px 12px rgba(255,107,129,0.12));}
+.hc-heart.liked{color:var(--accent);transform:scale(1.16);filter:drop-shadow(0 8px 12px #ff18cd);}
 
 /* Pulse animation when clicked or on mount hint */
 @keyframes heart-pulse {
   0% { transform: scale(1); filter: none; }
-  25% { transform: scale(1.28); filter: drop-shadow(0 12px 18px rgba(255,107,129,0.18)); }
+  25% { transform: scale(1.28); filter: drop-shadow(0 12px 18px #ff18cd); }
   50% { transform: scale(0.98); }
   75% { transform: scale(1.08); }
   100% { transform: scale(1.02); }
@@ -95,7 +102,7 @@ html,body{height:100%;margin:0;padding:0;background:transparent;font-family:Inte
 
 /* text styles inside content */
 .hc-card-content p, .hc-card-content ul, .hc-card-content .meta{
-  color:#ff00cc;font-size:14px;line-height:1.5;margin:0 0 10px;
+  color:#ff18cd;font-size:14px;line-height:1.5;margin:0 0 10px;
 }
 .hc-card-content .meta{font-size:12px;color:var(--muted);}
 

@@ -58,8 +58,8 @@
   position: absolute;
   width: 120%;
   height: 120%;
-  background: radial-gradient(circle, rgb(194, 38, 121) 0%, transparent 70%);
-  border-radius: 50%;
+  background: radial-gradient(circle, rgb(194, 38, 121) 0%, transparent 50%);
+  border-radius: 0%;
   animation: heart-glow 1.8s ease-in-out infinite;
   z-index: -1;
 }

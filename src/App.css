@@ -157,7 +157,7 @@ html, body {
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #ff6b81;
+  color: #ff18cd;
   user-select: none;
   pointer-events: none;
   animation-name: floatUp, pop;
