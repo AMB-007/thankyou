@@ -7,7 +7,7 @@ export default function FullPageHearts() {
       id: `heart-${i}`,
       left: Math.random() * 100,
       delay: Math.random() * 4,
-      duration: 3 + Math.random() * 5,
+      duration: 10 + Math.random() * 5,
       size: 5 + Math.random() * 20,
       opacity: 0.6 + Math.random() * 0.4,
       swayAmount: (Math.random() - 0.5) * 150,

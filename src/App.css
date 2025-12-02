@@ -93,7 +93,7 @@ html, body {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  color: #ff183b;               /* base color */
+  color: #ff18cd;               /* base color */
   will-change: transform, opacity;
   user-select: none;
   /* two animations applied: floatUp (long) and pop (short) */

@@ -12,7 +12,7 @@ export default function SimpleMessage({
     
   text =  'HI WHAT HAPPEN TO YOU MY CUTIEE',
   className = '',
-  extraLine = 'I KNOW WHAT HAPPEN TO MY CUTIEE... '
+  extraLine = ' '
 }
 : SimpleMessageProps) {
   const navigate = useNavigate()
@@ -26,7 +26,7 @@ export default function SimpleMessage({
 
           <p className="sm-sub">
             <center>"YOU'RE THINKING THAT YOU GAVE HIM A GIFT AND HE DIDN'T SAY ANY GOOD WORDS ABOUT IT."</center>
-            <center>"NOW YOU'RE THINKING THAT HE IS AN UNKIND-HEARTED MAN AND A HURTFUL PARTNER....."</center> 
+            <center>"AND HE IS AN UNKIND-HEARTED MAN AND A HURTFUL PARTNER....."</center> 
             <center>"I JUST WASTED MY TIME ON THIS HARD-HEARTED MAN..."</center> 
             </p>
 
