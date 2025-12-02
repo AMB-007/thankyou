@@ -24,8 +24,8 @@ const CARDS: CardData[] = [
     title: 'THANK YOU',
     content: (
       <p>
-        AND I LIKE YOUR GIFT MY CUTIEE",I DID NOT EXPECT THAT LOVE YOU MY CUTIEEE,"THANK YOU SO MUCH THIS.....
-        "LOVE YOU SO MUCH MY CUTIEEE....."
+        AND I LIKE YOUR GIFT MY CUTIEE",I DID NOT EXPECT THIS "LOVE YOU MY CUTIEEE","THANK YOU SO MUCH THIS.....
+        "LOVE YOU SO MUCH MY LOVE....."
       </p>
     ),
   },
