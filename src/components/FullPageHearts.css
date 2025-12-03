@@ -3,7 +3,8 @@
   inset: 0;
   pointer-events: none;
   overflow: hidden;
-  z-index: 1;
+  /* keep hearts behind main content but above background layers */
+  z-index: 0;
 }
 
 .falling-heart {
@@ -13,7 +14,7 @@
   align-items: center;
   justify-content: center;
   animation: fall-down linear infinite, sway ease-in-out infinite;
-
+  will-change: transform, opacity;
 }
 
 @keyframes fall-down {
@@ -62,6 +63,14 @@
   border-radius: 0%;
   animation: heart-glow 1.8s ease-in-out infinite;
   z-index: -1;
+}
+
+/* Make sure hearts scale up on small screens for visibility */
+@media (max-width: 480px) {
+  .falling-heart {
+    /* slightly larger baseline so emoji shows clearly on phones */
+    font-size: 18px !important;
+  }
 }
 
 @keyframes heart-glow {

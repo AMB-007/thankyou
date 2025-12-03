@@ -3,12 +3,15 @@ import './FullPageHearts.css'
 
 export default function FullPageHearts() {
   const hearts = useMemo(() => {
-    return Array.from({ length: 40 }).map((_, i) => ({
+    // Fewer and slightly larger hearts for better visibility on small screens
+    const count = 30
+    return Array.from({ length: count }).map((_, i) => ({
       id: `heart-${i}`,
       left: Math.random() * 100,
       delay: Math.random() * 4,
       duration: 10 + Math.random() * 5,
-      size: 5 + Math.random() * 20,
+      // increase min size so emojis remain visible on mobile
+      size: 12 + Math.random() * 24,
       opacity: 0.6 + Math.random() * 0.4,
       swayAmount: (Math.random() - 0.5) * 150,
     }))
@@ -29,7 +32,7 @@ export default function FullPageHearts() {
           '--sway-amount': `${heart.swayAmount}px`,
         } as React.CSSProperties & { '--sway-amount': string }}
       >
-        🩷
+        ❤️
       </div>
     ))}
   </div>
